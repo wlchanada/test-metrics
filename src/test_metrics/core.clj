@@ -17,9 +17,8 @@
 
 
 (def users-connected (counter reg "users-connected"))
-(def datadog-reporter (metrics/ec2-datadog-reporter reg "e5092fdfe4caad7771dcba6815d1ac13"))
-;(def datadog-reporter (metrics/ec2-datadog-reporter))
-(reporters/start datadog-reporter reg) 
+(def datadog-reporter (metrics/ec2-datadog-reporter 1 "e5092fdfe4caad7771dcba6815d1ac13"))
+;(reporters/start datadog-reporter reg) 
 
 (declare reg)
 (declare test2)
