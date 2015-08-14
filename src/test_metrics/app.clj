@@ -1,0 +1,4 @@
+(defn double 
+  [x]
+  (* x 2)
+)
