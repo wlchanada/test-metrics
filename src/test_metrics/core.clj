@@ -9,15 +9,15 @@
             [metrics.reporters :as reporters]
             [metrics.counters :refer [inc!]]))
 
-(def reg (new-registry))
+;(def reg (new-registry))
 ;(def users-connected (counter reg "users-connected"))
 ;(def CR (console/reporter reg {}))
 ;(console/start CR 10)
 
+(def dr (metrics/ec2-datadog-registry 1 "e5092fdfe4caad7771dcba6815d1ac13"))
 
-
-(def users-connected (counter reg "users-connected"))
-(def datadog-reporter (metrics/ec2-datadog-reporter 1 "e5092fdfe4caad7771dcba6815d1ac13"))
+;(def users-connected (counter reg "users-connected"))
+;(def datadog-reporter (metrics/ec2-datadog-reporter reg "e5092fdfe4caad7771dcba6815d1ac13"))
 ;(reporters/start datadog-reporter reg) 
 
 (declare reg)
@@ -38,7 +38,7 @@
 (defn test2
   [x]
   (* 2 x)
-  ;  (counter/inc!)
-  (inc! users-connected)
+  (print (class dr))
+  (inc! (counter dr "user-connected"))
   (Thread/sleep 100000)
 )

@@ -29,7 +29,7 @@
                                  DatadogReporter$Expansion/P95
                                  DatadogReporter$Expansion/P99]))]
     (.build (doto (DatadogReporter/forRegistry registry)
-              (.withEC2Host)
+;              (.withEC2Host)
               (.withTransport transport)
               (.withExpansions expansions)))))
 
@@ -43,6 +43,7 @@
     registry))
 
 ;; public api:
+;(def metric-registry (registry))
 
 (defn registry
   "Creates a metrics registry."
