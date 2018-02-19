@@ -14,7 +14,7 @@ FIXME: explanation
 
 ## Options
 
-FIXME: listing of options this app accepts.
+FIXME: listing of options this app accepts
 
 ## Examples
 
