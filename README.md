@@ -1,6 +1,5 @@
 # test-metrics
 
-FIXME: description
 
 ## Installation
 
